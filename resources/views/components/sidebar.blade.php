@@ -1,4 +1,6 @@
 @vite('resources/css/app.css')
+@vite('resources/js/app.js')
+
 
 <div class="relative flex border w-full max-w-[20rem] flex-col bg-white p-4 text-gray-700 shadow">
 

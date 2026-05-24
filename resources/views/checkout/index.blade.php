@@ -1,7 +1,7 @@
 @vite('resources/css/app.css')
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
-<div x-data="checkout({{ $subtotal }})" class="p-6 bg-gray-50 min-h-screen">
+<div class="flex items-center justify-center p-30">
+<div x-data="checkout({{ $subtotal }})" class="p-6 bg-gray-50 h-[] w-[550px] border border-r-4">
     <h2 class="text-xl font-bold mb-4">Checkout</h2>
 
     {{-- Tabel produk --}}
@@ -36,7 +36,7 @@
     </div>
 
     {{-- Ringkasan --}}
-    <div class="space-y-2">
+    <div class="flex-box items-end">
         <p>Subtotal: Rp <span x-text="subtotal"></span></p>
         <p>Admin: Rp <span x-text="admin"></span></p>
         <p x-show="paymentType==='online'">Ongkir: Rp <span x-text="ongkir"></span></p>
@@ -63,18 +63,18 @@
         @endforeach
 
         <div class="flex gap-4 mt-6">
+        <a href="{{ route('shop.index') }}"
+           class="flex-1 bg-gray-300 text-gray-700 py-2 rounded-lg hover:bg-gray-400 transition text-center">
+           ← Back
+        </a>
             <button type="submit"
                 class="flex-1 bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition">
                 Bayar
             </button>
-            <a href="{{ route('shop.index') }}"
-               class="flex-1 bg-gray-300 text-gray-700 py-2 rounded-lg hover:bg-gray-400 transition text-center">
-               ← Back
-            </a>
         </div>
     </form>
 </div>
-
+</div>
 <script>
 function checkout(subtotal){
     return {

@@ -1,11 +1,13 @@
 @vite('resources/css/app.css')
+@vite('resources/js/app.js')
+
 <div class="flex h-screen w-full">
     {{-- Sidebar --}}
     <x-sidebar></x-sidebar>
 
     {{-- Main content --}}
 
-<div class="p-6 bg-gray-50 w-full">
+    <div class="p-6 bg-gray-50 w-full">
     <h1 class="text-2xl font-bold mb-6">Dashboard</h1>
 
     {{-- Statistik --}}
@@ -25,7 +27,7 @@
     </div>
 
     {{-- Transaksi terbaru --}}
-    <div class="bg-white rounded-lg shadow p-6">
+        <div class="bg-white rounded-lg shadow p-6">
         <h2 class="text-lg font-semibold mb-4">Transaksi Terbaru</h2>
         <table class="w-full border">
             <thead class="bg-gray-100">
@@ -48,8 +50,12 @@
             </tbody>
             @endforeach
         </table>
-        <p>{{ $jumlahTransaksi }}</p>
-    </div>
-</div>
+        </div>
 
+        <div class="bg-white rounded-lg shadow p-6">
+            <div class="mb-6">
+                <div class="bg-grey-400 rounded-lg p-6"></div>
+            </div>
+        </div>
+    </div>
 </div>
